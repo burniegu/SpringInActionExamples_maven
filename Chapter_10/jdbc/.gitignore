@@ -1,7 +1,3 @@
-/build/
+/target/
 /bin/
-.springBeans
-.settings
-.project
-.classpath
-.gradle
+

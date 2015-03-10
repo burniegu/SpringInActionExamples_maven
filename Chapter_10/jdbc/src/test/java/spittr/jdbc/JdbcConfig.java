@@ -2,8 +2,10 @@ package spittr.jdbc;
 
 import javax.sql.DataSource;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -20,10 +22,13 @@ public class JdbcConfig {
 
   @Bean
   public DataSource dataSource() {
-    return new EmbeddedDatabaseBuilder()
-      .setType(EmbeddedDatabaseType.H2)
-      .addScripts("classpath:spittr/db/jdbc/schema.sql", "classpath:spittr/db/jdbc/test-data.sql")
-      .build();
+//    return new EmbeddedDatabaseBuilder()
+//      .setType(EmbeddedDatabaseType.H2)
+//      .addScripts("classpath:spittr/db/jdbc/schema.sql", "classpath:spittr/db/jdbc/test-data.sql")
+//      .build();
+	  ApplicationContext context = 
+	    		new ClassPathXmlApplicationContext("classpath:spittr/db/jdbc/JdbcRepositoryTests-context.xml");
+	 	        return (DataSource) context.getBean("dataSource");
   }
   
   @Bean
