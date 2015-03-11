@@ -17,6 +17,8 @@
 		<property name="url" value="jdbc:hsqldb:hsql://localhost:9003/springinaction" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="10" />
 	</bean>
 	
 	<jdbc:initialize-database data-source="dataSource">
