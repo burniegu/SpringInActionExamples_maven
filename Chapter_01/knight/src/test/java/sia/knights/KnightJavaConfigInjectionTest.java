@@ -14,6 +14,8 @@ import sia.knights.Knight;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=KnightConfig.class,loader=AnnotationConfigContextLoader.class)
+//@ContextConfiguration(locations={"classpath:sia/knights/KnightXMLInjectionTest-context.xml"})
+//@ContextConfiguration("classpath:sia/knights/KnightXMLInjectionTest-context.xml")
 public class KnightJavaConfigInjectionTest {
 
   @Autowired
