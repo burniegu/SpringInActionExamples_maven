@@ -11,3 +11,4 @@ exploration
 *.iml
 *.ipr
 *.iws
+/target/
