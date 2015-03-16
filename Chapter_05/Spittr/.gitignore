@@ -2,6 +2,5 @@
 /bin/
 .springBeans
 .settings
-.project
-.classpath
 .gradle
+/target/
